@@ -39,7 +39,7 @@ export default function HomePage() {
     try {
       setError('')
       setSearchDate(date)
-      const res = await axios.get(`/api/routes?source=${source}&destination=${destination}`)
+      const res = await api.get(`/api/routes?source=${source}&destination=${destination}`)
       setRoutes(res.data)
       setSearched(true)
       if (res.data.length === 1) {
