@@ -1,0 +1,85 @@
+/* ===== My Seat Breathing Glow — rose palette ===== */
+@keyframes my-seat-glow {
+  0%, 100% {
+    box-shadow: 0 0 0 3px rgba(255, 183, 197, 0.35);
+  }
+  50% {
+    box-shadow: 0 0 0 6px rgba(255, 183, 197, 0.5), 0 0 20px rgba(255, 183, 197, 0.25);
+  }
+}
+
+/* ===== Seat Flash Animations ===== */
+@keyframes seat-flash-in {
+  0% {
+    box-shadow: 0 0 0 0 rgba(245, 224, 184, 0.7);
+  }
+  40% {
+    box-shadow: 0 0 0 10px rgba(245, 224, 184, 0.4), 0 0 24px rgba(245, 224, 184, 0.3);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(245, 224, 184, 0);
+  }
+}
+
+@keyframes seat-flash-out {
+  0% {
+    box-shadow: 0 0 0 0 rgba(213, 243, 216, 0.7);
+  }
+  40% {
+    box-shadow: 0 0 0 10px rgba(213, 243, 216, 0.4), 0 0 24px rgba(213, 243, 216, 0.3);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(213, 243, 216, 0);
+  }
+}
+
+/* ===== Live Pulse — mint ===== */
+@keyframes live-pulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(126, 201, 142, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 0 4px rgba(126, 201, 142, 0.25);
+  }
+}
+
+/* ===== Activity Feed ===== */
+@keyframes activity-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== Toast ===== */
+@keyframes toast-slide-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* ===== Timer Pulse ===== */
+@keyframes timer-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+/* ===== Marquee — infinite scroll ===== */
+@keyframes marquee-left {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@keyframes marquee-right {
+  from { transform: translateX(-50%); }
+  to { transform: translateX(0); }
+}

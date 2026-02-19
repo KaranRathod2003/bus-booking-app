@@ -1,0 +1,126 @@
+/* ===== Ticket — Boarding Pass Style ===== */
+.ticket {
+  background: var(--color-surface);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-md);
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.ticket-header {
+  background: var(--color-accent);
+  color: #2d2d2d;
+  padding: 16px 18px;
+  text-align: center;
+}
+
+.ticket-header h2 {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.ticket-pnr {
+  text-align: center;
+  padding: 14px;
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  color: var(--color-text);
+  background: var(--ticket-pnr-bg);
+}
+
+.ticket-body {
+  padding: 16px;
+}
+
+.ticket-divider {
+  border: none;
+  border-top: 2px dashed var(--ticket-divider);
+  margin: 0;
+  position: relative;
+}
+
+.ticket-divider::before,
+.ticket-divider::after {
+  content: '';
+  position: absolute;
+  top: -12px;
+  width: 24px;
+  height: 24px;
+  background: var(--color-bg);
+  border-radius: 50%;
+}
+
+.ticket-divider::before {
+  left: -12px;
+}
+
+.ticket-divider::after {
+  right: -12px;
+}
+
+.ticket-route-visual {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 16px;
+  justify-content: center;
+}
+
+.ticket-route-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--color-accent);
+  border: 2px solid var(--color-accent-text);
+}
+
+.ticket-route-line {
+  flex: 1;
+  height: 3px;
+  background: linear-gradient(90deg, var(--color-accent), var(--color-available));
+  max-width: 120px;
+  border-radius: 2px;
+}
+
+.ticket-route-city {
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--color-text);
+}
+
+.ticket-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--activity-border);
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.ticket-row:last-child {
+  border-bottom: none;
+}
+
+.ticket-label {
+  font-size: 11px;
+  color: var(--activity-time-color);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 600;
+}
+
+.ticket-value {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.ticket-qr {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  background: var(--ticket-qr-bg);
+}

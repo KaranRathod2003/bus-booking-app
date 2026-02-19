@@ -1,0 +1,5 @@
+[
+  { "id": "op_1", "name": "Kaveri Travels", "rating": 4.2, "logo": "KT" },
+  { "id": "op_2", "name": "VRL Travels", "rating": 4.5, "logo": "VRL" },
+  { "id": "op_3", "name": "SRS Travels", "rating": 3.9, "logo": "SRS" }
+]

@@ -1,0 +1,30 @@
+[
+  {
+    "id": "route_1",
+    "source": "Hyderabad",
+    "destination": "Bangalore",
+    "distance": 570,
+    "duration": "8h 30m"
+  },
+  {
+    "id": "route_2",
+    "source": "Bangalore",
+    "destination": "Chennai",
+    "distance": 350,
+    "duration": "6h"
+  },
+  {
+    "id": "route_3",
+    "source": "Hyderabad",
+    "destination": "Chennai",
+    "distance": 630,
+    "duration": "9h"
+  },
+  {
+    "id": "route_4",
+    "source": "Mumbai",
+    "destination": "Pune",
+    "distance": 150,
+    "duration": "3h"
+  }
+]

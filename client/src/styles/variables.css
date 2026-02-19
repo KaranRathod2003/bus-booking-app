@@ -1,0 +1,179 @@
+/* ===== Light Theme — Soft Pastel Palette ===== */
+:root {
+  /* Primary */
+  --color-primary: #2d2d2d;
+  --color-primary-light: #2d2d2d;
+  --color-primary-subtle: #fdf8f8;
+  --color-accent: #FFB7C5;
+  --color-accent-text: #c4657a;
+
+  /* Backgrounds */
+  --color-bg: #FFFFFF;
+  --color-bg-outer: #faf6f6;
+
+  /* Surfaces */
+  --color-surface: #FFFFFF;
+  --color-surface-raised: #fdf8f8;
+
+  /* Borders — blush from palette */
+  --color-border: #F2C7C7;
+  --color-border-light: #f7dede;
+  --color-border-hover: #FFB7C5;
+
+  /* Text */
+  --color-text: #2d2d2d;
+  --color-text-secondary: #7a6e70;
+  --color-text-muted: #a89698;
+
+  /* Seat statuses — palette-derived pastels */
+  --color-available: #D5F3D8;
+  --color-available-dark: #7ec98e;
+  --color-mine: #FFB7C5;
+  --color-mine-dark: #d4949f;
+  --color-locked: #F5E0B8;
+  --color-locked-dark: #c4b08a;
+  --color-held: #E8D5F5;
+  --color-held-dark: #b8a0cc;
+  --color-booked: #F2C7C7;
+  --color-booked-dark: #c49a9a;
+
+  /* Shadows — soft warm tint */
+  --shadow-sm: 0 1px 3px rgba(180, 120, 130, 0.06);
+  --shadow-md: 0 3px 10px rgba(180, 120, 130, 0.1);
+  --shadow-lg: 0 6px 20px rgba(180, 120, 130, 0.12);
+  --shadow-glow: 0 0 0 3px rgba(255, 183, 197, 0.35);
+
+  /* Radii — smooth rounded */
+  --radius-sm: 8px;
+  --radius-md: 10px;
+  --radius-lg: 12px;
+  --radius-xl: 14px;
+
+  /* Timing */
+  --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-fast: 0.15s var(--ease-smooth);
+  --transition-base: 0.2s var(--ease-smooth);
+  --transition-slow: 0.35s var(--ease-smooth);
+
+  /* Font */
+  --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+  /* Component tokens */
+  --header-bg: rgba(255, 255, 255, 0.85);
+  --header-text: var(--color-text);
+  --header-border: var(--color-border);
+  --bus-outline-bg: var(--color-surface);
+  --bus-outline-border: var(--color-border);
+  --bus-windshield-bg: var(--color-surface-raised);
+  --bus-windshield-label: var(--color-text-muted);
+  --bus-driver-bg: #FFB7C5;
+  --bus-column-label-color: var(--color-text-muted);
+  --activity-border: var(--color-border-light);
+  --activity-time-color: var(--color-text-muted);
+  --ticket-pnr-bg: var(--color-surface-raised);
+  --ticket-divider: var(--color-border);
+  --ticket-qr-bg: var(--color-surface-raised);
+  --booking-summary-bg: rgba(213, 243, 216, 0.15);
+  --payment-timer-bg: var(--color-surface-raised);
+  --payment-timer-border: var(--color-border);
+  --hero-bg: linear-gradient(135deg, #F2C7C7 0%, #D5F3D8 100%);
+  --hero-border: transparent;
+  --demo-banner-bg: rgba(242, 199, 199, 0.15);
+  --demo-banner-border: var(--color-border);
+  --selected-seat-bg: rgba(213, 243, 216, 0.25);
+  --selected-seat-border: #D5F3D8;
+  --operator-logo-bg: rgba(255, 183, 197, 0.15);
+  --bus-amenity-bg: rgba(213, 243, 216, 0.2);
+  --message-error-bg: rgba(255, 183, 197, 0.15);
+  --message-error-color: #c4657a;
+  --message-error-border: #FFB7C5;
+  --message-success-bg: rgba(213, 243, 216, 0.25);
+  --message-success-color: #3a8f4f;
+  --message-success-border: #D5F3D8;
+  --message-info-bg: rgba(232, 213, 245, 0.15);
+  --message-info-color: #7a5fa0;
+  --message-info-border: #E8D5F5;
+  --reschedule-step-bg: var(--color-surface-raised);
+  --reschedule-step-color: var(--color-text-muted);
+  --reschedule-step-text: var(--color-text-muted);
+  --bus-card-selected-bg: rgba(255, 183, 197, 0.08);
+}
+
+/* ===== Dark Theme — Warm Dark ===== */
+[data-theme="dark"] {
+  --color-primary: #f5f0f2;
+  --color-primary-light: #e8dfe2;
+  --color-primary-subtle: #1a1720;
+  --color-accent: #FFB7C5;
+  --color-accent-text: #ffcdd7;
+
+  --color-bg: #0f0d12;
+  --color-bg-outer: #0a090c;
+
+  --color-surface: #1a1720;
+  --color-surface-raised: #231f28;
+
+  --color-border: #332d38;
+  --color-border-light: #231f28;
+  --color-border-hover: #FFB7C5;
+
+  --color-text: #f5f0f2;
+  --color-text-secondary: #9a8f94;
+  --color-text-muted: #716a6e;
+
+  /* Seat statuses — muted deep tones for dark */
+  --color-available: #2e5e3e;
+  --color-available-dark: #5a9a6e;
+  --color-mine: #7a4050;
+  --color-mine-dark: #b07585;
+  --color-locked: #7a6a3e;
+  --color-locked-dark: #a89868;
+  --color-held: #5a4a7a;
+  --color-held-dark: #8a70aa;
+  --color-booked: #5a3a3e;
+  --color-booked-dark: #8a5a60;
+
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 3px 10px rgba(0, 0, 0, 0.35);
+  --shadow-lg: 0 6px 20px rgba(0, 0, 0, 0.4);
+  --shadow-glow: 0 0 0 3px rgba(176, 117, 133, 0.3);
+
+  --header-bg: rgba(26, 23, 32, 0.85);
+  --header-text: var(--color-text);
+  --header-border: var(--color-border);
+  --bus-outline-bg: var(--color-surface);
+  --bus-outline-border: var(--color-border);
+  --bus-windshield-bg: var(--color-surface-raised);
+  --bus-windshield-label: var(--color-text-muted);
+  --bus-driver-bg: #7a4050;
+  --bus-column-label-color: var(--color-text-muted);
+  --activity-border: var(--color-border-light);
+  --activity-time-color: var(--color-text-muted);
+  --ticket-pnr-bg: var(--color-surface-raised);
+  --ticket-divider: var(--color-border);
+  --ticket-qr-bg: #ffffff;
+  --booking-summary-bg: rgba(46, 94, 62, 0.1);
+  --payment-timer-bg: var(--color-surface-raised);
+  --payment-timer-border: var(--color-border);
+  --hero-bg: linear-gradient(135deg, rgba(122, 64, 80, 0.2) 0%, rgba(46, 94, 62, 0.2) 100%);
+  --hero-border: var(--color-border);
+  --demo-banner-bg: rgba(122, 64, 80, 0.12);
+  --demo-banner-border: var(--color-border);
+  --selected-seat-bg: rgba(46, 94, 62, 0.15);
+  --selected-seat-border: rgba(90, 154, 110, 0.3);
+  --operator-logo-bg: rgba(122, 64, 80, 0.2);
+  --bus-amenity-bg: rgba(46, 94, 62, 0.12);
+  --message-error-bg: rgba(122, 64, 80, 0.15);
+  --message-error-color: #d08090;
+  --message-error-border: rgba(122, 64, 80, 0.35);
+  --message-success-bg: rgba(46, 94, 62, 0.15);
+  --message-success-color: #70b880;
+  --message-success-border: rgba(46, 94, 62, 0.35);
+  --message-info-bg: rgba(90, 74, 122, 0.15);
+  --message-info-color: #a090c8;
+  --message-info-border: rgba(90, 74, 122, 0.35);
+  --reschedule-step-bg: var(--color-surface-raised);
+  --reschedule-step-color: var(--color-text-muted);
+  --reschedule-step-text: var(--color-text-muted);
+  --bus-card-selected-bg: rgba(122, 64, 80, 0.12);
+}
