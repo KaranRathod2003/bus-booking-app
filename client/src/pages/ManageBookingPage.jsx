@@ -1,7 +1,7 @@
 import { useState, useEffect, useCallback, useRef } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { Check } from 'lucide-react'
-import axios from 'axios'
+import api from '../utils/api'
 import { socket, userId } from '../socket'
 import { useToast } from '../context/ToastContext'
 import BusCard from '../components/BusCard'

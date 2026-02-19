@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { useParams, Link } from 'react-router-dom'
-import axios from 'axios'
+import api from '../utils/api'
 import QRTicket from '../components/QRTicket'
 import PageTransition from '../components/PageTransition'
 
@@ -16,7 +16,7 @@ export default function TicketPage() {
       setError('')
       for (let i = 0; i < retries; i++) {
         try {
-          const res = await axios.get(`/api/tickets/${pnr}`)
+          const res = await api.get(`/api/tickets/${pnr}`)
           if (!cancelled) setTicket(res.data)
           return
         } catch (err) {

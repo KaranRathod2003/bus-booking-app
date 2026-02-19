@@ -4,7 +4,7 @@ import { ArrowLeft } from 'lucide-react'
 import { socket, userId } from '../socket'
 import { useLockTimer } from '../components/CountdownTimer'
 import { useToast } from '../context/ToastContext'
-import axios from 'axios'
+import api from '../utils/api'
 import PageTransition from '../components/PageTransition'
 
 function formatTime(seconds) {
@@ -41,7 +41,7 @@ export default function PaymentPage() {
   useEffect(() => {
     const acquireLock = async () => {
       try {
-        const res = await axios.post(`/api/buses/${busId}/seats/lock`, {
+        const res = await api.post(`/api/buses/${busId}/seats/lock`, {
           seatId,
           userId,
           date,
@@ -74,7 +74,7 @@ export default function PaymentPage() {
     const confirmed = window.confirm("You'll lose your seat reservation. Continue?");
     if (!confirmed) return;
     try {
-      await axios.post(`/api/buses/${busId}/seats/unlock`, { seatId, userId, date });
+      await api.post(`/api/buses/${busId}/seats/unlock`, { seatId, userId, date });
     } catch {
       // Best-effort
     }
@@ -102,7 +102,7 @@ export default function PaymentPage() {
   useEffect(() => {
     const load = async () => {
       try {
-        const busRes = await axios.get(`/api/buses/${busId}`)
+        const busRes = await api.get(`/api/buses/${busId}`)
         const bus = busRes.data
         if (bus) {
           setSeatInfo({
@@ -130,7 +130,7 @@ export default function PaymentPage() {
     setError('')
 
     try {
-      const res = await axios.post('/api/book', {
+      const res = await api.post('/api/book', {
         busId,
         seatId,
         userId,

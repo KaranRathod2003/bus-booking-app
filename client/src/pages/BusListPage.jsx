@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { useParams, useNavigate, useSearchParams } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import axios from 'axios'
+import api from '../utils/api'
 import BusCard from '../components/BusCard'
 import PageTransition, { staggerContainer, staggerItem } from '../components/PageTransition'
 
@@ -18,8 +18,8 @@ export default function BusListPage() {
     const load = async () => {
       try {
         const [busRes, routeRes] = await Promise.all([
-          axios.get(`/api/buses?routeId=${routeId}`),
-          axios.get(`/api/routes`),
+          api.get(`/api/buses?routeId=${routeId}`),
+          api.get(`/api/routes`),
         ])
         setBuses(busRes.data)
         const r = routeRes.data.find((rt) => rt.id === routeId)

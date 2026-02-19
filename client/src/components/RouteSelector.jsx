@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { MapPin, Search } from 'lucide-react'
-import axios from 'axios'
+import api from '../utils/api'
 
 function getTomorrow() {
   const d = new Date()
@@ -25,7 +25,7 @@ export default function RouteSelector({ onSearch }) {
   const [date, setDate] = useState(getTomorrow())
 
   useEffect(() => {
-    axios.get('/api/routes/cities').then((res) => setCities(res.data))
+    api.get('/api/routes/cities').then((res) => setCities(res.data))
   }, [])
 
   const handleSearch = () => {

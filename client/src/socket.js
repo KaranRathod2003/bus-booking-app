@@ -7,8 +7,10 @@ if (!userId) {
   localStorage.setItem('busbook_userId', userId);
 }
 
-// Use environment variable for backend URL in production
-const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3001';
+// Determine API URL based on environment
+const API_URL = import.meta.env.PROD
+  ? 'https://bus-booking-app-rtg9.onrender.com'
+  : 'http://localhost:3001';
 
 const socket = io(API_URL, {
   transports: ['websocket', 'polling'],

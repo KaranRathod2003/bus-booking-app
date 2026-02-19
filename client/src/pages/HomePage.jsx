@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { Lock, Zap, ShieldCheck, Wifi, Radio, Shield, Timer, Cpu, RefreshCw, Activity, GitBranch, Layers } from 'lucide-react'
-import axios from 'axios'
+import api from '../utils/api'
 import RouteSelector from '../components/RouteSelector'
 import PageTransition from '../components/PageTransition'
 
