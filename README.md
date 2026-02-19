@@ -168,30 +168,39 @@ User A selects seat → WebSocket connection established
 ## 📸 Screenshots
 
 ### Homepage
-![Homepage](https://via.placeholder.com/800x450/1a1a2e/ffffff?text=BusBook+Homepage+-+Search+Routes)
+![Homepage](./ss/home.png)
+
+### Bus List
+![Bus List](./ss/buses.png)
 
 ### Real-Time Seat Selection
-![Seat Map](https://via.placeholder.com/800x450/16213e/ffffff?text=Live+Seat+Grid+-+Real-Time+Updates)
+![Seat Map](./ss/seat%20booking.png)
+
+### Live Activity Feed
+![Live Activity](./ss/live%20activity.png)
 
 ### Payment & Lock Timer
-![Payment](https://via.placeholder.com/800x450/0f3460/ffffff?text=Payment+Page+-+Auto-Release+Timer)
+![Payment](./ss/payment.png)
 
-### Digital Ticket with QR
-![Ticket](https://via.placeholder.com/800x450/533483/ffffff?text=QR+Ticket+-+PNR+Generation)
+### Ticket Confirmation with QR
+![Ticket](./ss/ticket%20booked.png)
+
+### Manage Booking
+![Manage Booking](./ss/manage%20booking.png)
 
 ---
 
 ## 🛠️ Local Development
 
 ### Prerequisites
-- Node.js 18+ 
+- Node.js 18+
 - Redis (local or Upstash)
 
 ### Clone & Setup
 
 ```bash
 # Clone the repository
-git clone https://github.com/YOUR_USERNAME/bus-booking-app.git
+git clone https://github.com/KaranRathod2003/bus-booking-app.git
 cd bus-booking-app
 
 # Install server dependencies
@@ -294,8 +303,8 @@ async function selectSeat(seatId, userId) {
   if (seat.status !== 'available') {
     throw new Error('Seat not available');
   }
-  await db.seats.update({ id: seatId }, { 
-    status: 'locked', 
+  await db.seats.update({ id: seatId }, {
+    status: 'locked',
     lockedBy: userId,
     lockExpiry: Date.now() + 10 * 60 * 1000 // 10 minutes
   });
@@ -308,23 +317,23 @@ async function selectSeat(seatId, userId) {
 // ✅ Redis TTL + WebSocket Heartbeat (30-second release)
 async function selectSeat(seatId, userId, busId, date) {
   const lockKey = `lock:${busId}:${date}:${seatId}`;
-  
+
   // Atomic Redis SETNX with TTL
   const acquired = await redis.set(lockKey, userId, 'EX', 30, 'NX');
   if (!acquired) {
     throw new Error('Seat already locked');
   }
-  
+
   // WebSocket heartbeat keeps lock alive
   socket.on('heartbeat', async () => {
     await redis.expire(lockKey, 30);
   });
-  
+
   // Instant cleanup on disconnect
   socket.on('disconnect', async () => {
     await redis.del(lockKey);
   });
-  
+
   return { success: true, ttl: 30 };
 }
 ```
@@ -376,8 +385,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 👨‍💻 Author
 
-**Your Name**  
-[GitHub](https://github.com/YOUR_USERNAME) • [LinkedIn](https://linkedin.com/in/YOUR_PROFILE) • [Portfolio](https://your-portfolio.com)
+**Karan Rathod**
+[GitHub](https://github.com/KaranRathod2003) • [LinkedIn](https://linkedin.com/in/YOUR_PROFILE)
 
 ---
 
