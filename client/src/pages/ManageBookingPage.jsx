@@ -167,7 +167,7 @@ export default function ManageBookingPage() {
     resetReschedule()
 
     try {
-      const res = await axios.get(`/api/tickets/${pnr.trim().toUpperCase()}`)
+      const res = await api.get(`/api/tickets/${pnr.trim().toUpperCase()}`)
       setTicket(res.data)
     } catch (err) {
       setError(err.response?.data?.error || 'Booking not found')
@@ -178,11 +178,11 @@ export default function ManageBookingPage() {
     setError('')
     setSuccess('')
     try {
-      const res = await axios.post('/api/cancel', { pnr: ticket.booking.pnr })
+      const res = await api.post('/api/cancel', { pnr: ticket.booking.pnr })
       setSuccess(
         `Booking cancelled. Penalty: \u20B9${res.data.penalty} (${res.data.penaltyPercent}%). Refund: \u20B9${res.data.refund}`
       )
-      const updated = await axios.get(`/api/tickets/${ticket.booking.pnr}`)
+      const updated = await api.get(`/api/tickets/${ticket.booking.pnr}`)
       setTicket(updated.data)
     } catch (err) {
       setError(err.response?.data?.error || 'Cancel failed')
@@ -207,7 +207,7 @@ export default function ManageBookingPage() {
     resetReschedule()
     setShowReschedule(true)
     try {
-      const res = await axios.get('/api/routes')
+      const res = await api.get('/api/routes')
       setRoutes(res.data)
     } catch {
       setError('Failed to load routes')
@@ -218,7 +218,7 @@ export default function ManageBookingPage() {
     if (!selectedRoute || !rescheduleDate) return
     setError('')
     try {
-      const res = await axios.get(`/api/buses?routeId=${selectedRoute}`)
+      const res = await api.get(`/api/buses?routeId=${selectedRoute}`)
       setBuses(res.data)
       setStep(1)
     } catch {
@@ -240,7 +240,7 @@ export default function ManageBookingPage() {
     setError('')
     setSuccess('')
     try {
-      const res = await axios.post('/api/reschedule', {
+      const res = await api.post('/api/reschedule', {
         pnr: ticket.booking.pnr,
         newBusId: selectedBus,
         newSeatId: selectedSeat,
